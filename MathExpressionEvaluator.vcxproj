@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1A3B1DDC-FE25-47E4-91E2-EBEBC66E789A}</ProjectGuid>
-    <RootNamespace>Trial</RootNamespace>
+    <RootNamespace>MathExpressionEvaluator</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
