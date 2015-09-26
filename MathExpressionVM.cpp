@@ -135,6 +135,10 @@ double MathExpressionVM::run(vector<unsigned char>& code)
 			{
 				stack.push(boost::math::constants::e<double>());
 			}
+			else
+			{
+				throw NameException(functionName);
+			}
 			break;
 		}
 
@@ -145,7 +149,7 @@ double MathExpressionVM::run(vector<unsigned char>& code)
 
 			if (m_vars.count(varName) <= 0)
 			{
-				throw NameException();
+				throw NameException(varName);
 			}
 
 			stack.push(m_vars[varName]);

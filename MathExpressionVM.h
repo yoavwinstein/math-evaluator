@@ -31,7 +31,14 @@ class StackOverflowException : public std::exception
 
 class NameException : public std::exception
 {
+public:
+	NameException(const string& name)
+		: m_name(name)
+	{
 
+	}
+
+	string m_name;
 };
 
 template<typename T>

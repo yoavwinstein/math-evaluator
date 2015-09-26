@@ -40,18 +40,33 @@ int main()
 	{
 		std::string input;
 		char buf[1024];
+		std::cout << ">>> ";
 		cin.getline(buf, sizeof(buf));
 		input = std::string(buf);
-		vector<unsigned char>& code = vector<unsigned char>();
+		try
+		{
+			MathExpressionCompiler comp;
+			vector<unsigned char> code =
+			comp.compile(input);
 
-		MathExpressionCompiler comp;
-		comp.compile(input);
-	
-		MathExpressionVM vm;
-		vm.setVar("x", var);
-		double res = vm.run(comp.m_code);
-		std::cout << res << "\n";
-		var += 1;
+			MathExpressionVM vm;
+			vm.setVar("x", var);
+			double res = vm.run(code);
+			std::cout << res << "\n";
+			var += 1;
+		}
+		catch (CompileException & ex)
+		{
+			std::cout << "Unable to compile. Expected: " << ex.m_symbol << "\n";
+		}
+		catch (NameException & ex)
+		{
+			std::cout << "Unknown name: " << ex.m_name << "\n";
+		}
+		catch (StackOverflowException & ex)
+		{
+			std::cout << "Stack overflow: " << "\n";
+		}
 	}
 	return 0;
 }
