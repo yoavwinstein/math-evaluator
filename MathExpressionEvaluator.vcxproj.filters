@@ -24,6 +24,9 @@
     <ClCompile Include="MathExpressionVM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MathExpressionFunctionDispatcher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MathExpressionCompiler.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MathExpressionVM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathExpressionFunctionDispatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

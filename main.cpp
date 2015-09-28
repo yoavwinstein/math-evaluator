@@ -6,6 +6,7 @@
 #include <boost/variant.hpp>
 #include "MathExpressionVM.h"
 #include <map>
+#include <stack>
 
 namespace qi = boost::spirit::qi;
 namespace phoenix = boost::phoenix;
@@ -38,11 +39,13 @@ int main()
 	double var = 0;
 	while (1)
 	{
+		// TODO: functions not hard coded, extendible functions, arrays, handling foul code input.
 		std::string input;
 		char buf[1024];
 		std::cout << ">>> ";
 		cin.getline(buf, sizeof(buf));
 		input = std::string(buf);
+
 		try
 		{
 			MathExpressionCompiler comp;
@@ -63,9 +66,17 @@ int main()
 		{
 			std::cout << "Unknown name: " << ex.m_name << "\n";
 		}
+		catch (BadOpcodeException & ex)
+		{
+			std::cout << "Bad Opcode Exception.\n";
+		}
 		catch (StackOverflowException & ex)
 		{
-			std::cout << "Stack overflow: " << "\n";
+			std::cout << "Stack Overflow Exception.\n";
+		}
+		catch (BadPopException & ex)
+		{
+			std::cout << "Bad Pop Exception.\n";
 		}
 	}
 	return 0;

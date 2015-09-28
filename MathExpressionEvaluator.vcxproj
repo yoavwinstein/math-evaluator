@@ -127,11 +127,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MathExpressionCompiler.cpp" />
+    <ClCompile Include="MathExpressionFunctionDispatcher.cpp" />
     <ClCompile Include="MathExpressionVM.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MachineCode.h" />
     <ClInclude Include="MathExpressionCompiler.h" />
+    <ClInclude Include="MathExpressionFunctionDispatcher.h" />
     <ClInclude Include="MathExpressionVM.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
