@@ -1,6 +1,7 @@
 #include <cstdint>
 #pragma once
 
+// CR: Use enum class
 enum BaseOpcode
 {
 	OPCODE_NOP = 0,
